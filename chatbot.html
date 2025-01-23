@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot | GadgetBot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        span.bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container" id="chat-container">
+        <div class="chat-body"></div>
+        <div class="chat-footer">
+            <select name="options">
+                <option value="recomendation">Rekomendasi</option>
+                <option value="askQuestion">Tanya GadgetBot</option>
+            </select>
+            <input type="text" placeholder="Ketik pesan..." id="user-input">
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    <script type="module" src="js/chatbot.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script>
+        // Fungsi untuk memproses dan memformat teks dalam elemen <pre>
+            function formatPreElements(preElement) {
+            const content = preElement.textContent.trim();
+            const formattedContent = content.replace(/\\(.?)\\*/g, '<span class="bold">$1</span>');
+            preElement.innerHTML = formattedContent;
+        }
+
+        // Pilih container utama tempat pesan ditambahkan
+        const chatContainer = document.getElementById('chat-container');
+
+        // Format semua elemen <pre> yang sudah ada
+        chatContainer.querySelectorAll('pre').forEach(formatPreElements);
+
+        // Buat MutationObserver untuk memantau perubahan pada chatContainer
+        const observer = new MutationObserver((mutationsList) => {
+            mutationsList.forEach(mutation => {
+                // Periksa apakah elemen baru ditambahkan
+                if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeName === 'PRE') {
+                            // Format elemen <pre> yang baru ditambahkan
+                            formatPreElements(node);
+                        }
+                    });
+                }
+            });
+        });
+
+        // Mulai memantau perubahan pada chatContainer
+        observer.observe(chatContainer, { childList: true });
+    </script>
+</body>
+</html>

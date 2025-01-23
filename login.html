@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | GadgetBot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>LOGIN | GadgetBot</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <input type="email" name="login-email" id="loginEmail" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <input type="password" name="login-password" id="loginPassword" placeholder="Password">
+            </div>
+            <div class="options">
+                <a href="resetPassword.html">Lupa Password?</a>
+            </div>
+            <button type="submit" class="login-button">Masuk</button>
+        </form>
+        <button id="register-button" class="register-button">Daftar</button>
+    </div>
+    <script type="module" src="js/firebaseAuth.js"></script>
+</body>
+</html>

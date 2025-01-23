@@ -1,0 +1,259 @@
+html, body {
+    html, body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f0f0f0;
+    }
+}
+
+
+/* Autentikasi */
+.register-container, .login-container, .reset-password-container {
+    text-align: center;
+    width: 300px;
+}
+
+.register-container h1, .login-container h1, .reset-password-container h1 {
+    font-size: 24px;
+    color: #3d3d6c;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eaeaea;
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+.input-group input::placeholder {
+    color: #7a7a7a;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #7a7a7a;
+    margin-bottom: 20px;
+}
+
+.options a {
+    color: #3d3d6c;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+.register-button, .login-button, .reset-password-button {
+    margin: 10px auto;
+    width: 107%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7a7aff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+.register-button:hover, .login-button:hover, .reset-password-button:hover {
+    background-color: #3d3d6c;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+/* Chatbot */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.chat-body {
+    flex: 1;
+    padding-top: 120px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.chat-message.bot {
+    justify-content: flex-start;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message p {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    margin: 0;
+}
+
+.chat-message.bot pre {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 700px;
+    white-space: pre-wrap;
+    background-color: #d1e7ff;
+    color: #333;
+}
+
+.chat-message.user p {
+    background-color: #fff;
+    border: 1px solid #d1e7ff;
+    color: #333;
+}
+
+.chat-footer {
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-footer select {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-footer button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.chat-footer button i {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slide-in 0.3s ease-out;
+}
+
+.popup.success {
+    background-color: #4caf50;
+}
+
+.popup.error {
+    background-color: #f44336;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.popup.fade-out {
+    animation: fade-out 0.5s ease-in forwards;
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+.confirm-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.confirm-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-box p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.confirm-box button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-box .confirm-yes {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.confirm-box .confirm-no {
+    background-color: #f44336;
+    color: #fff;
+}

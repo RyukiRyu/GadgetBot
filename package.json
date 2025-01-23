@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@pinecone-database/pinecone": "^4.1.0",
+    "firebase": "^11.2.0",
+    "fs": "^0.0.1-security",
+    "gsmarena-api": "^2.0.5",
+    "openai": "^4.78.1",
+    "uuid": "^11.0.5",
+    "uuid4": "^2.0.3",
+    "uuidv4": "^6.2.13"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | GadgetBot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>REGISTER | GadgetBot</h1>
+        <form id="register-form">
+            <div class="input-group">
+                <input type="text" name="register-name" id="registerName" placeholder="Nama Pengguna" >
+            </div>
+            <div class="input-group">
+                <input type="email" name="register-email" id="registerEmail" placeholder="Email" >
+            </div>
+            <div class="input-group">
+                <input type="password" name="register-password" id="registerPassword" placeholder="Password" >
+            </div>
+            <div class="options">
+                <a href="login.html">Sudah Memiliki Akun?</a>
+            </div>
+            <button type="submit" class="register-button">Daftar</button>
+        </form>
+    </div>
+    <script type="module" src="js/firebaseAuth.js"></script>
+</body>
+</html>
