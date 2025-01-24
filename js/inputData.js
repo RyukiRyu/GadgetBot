@@ -137,7 +137,7 @@ class GadgetManager {
             }));
 
             // Menyimpan embeddings ke Pinecone
-            const response = await this.pineconeIndex.namespace("tester_namespace").upsert(upserts);
+            const response = await this.pineconeIndex.namespace("data_gadget").upsert(upserts);
             console.log(response);
         } else {
             console.log("Tidak ada embeddings yang dihasilkan.");
@@ -197,8 +197,8 @@ const openAIConfig = {
 
 const pineconeConfig = {
     apiKey: "pcsk_3N2Nde_HXKSp5DMXEdPedQQcb6gKqGxq1riUCFeF9e4grDxDygAQtP32Vww9jc5EwZfQc7",
-    indexName: "tester",
-    indexUrl: "https://tester-phlwcrc.svc.aped-4627-b74a.pinecone.io",
+    indexName: "dbgadget",
+    indexUrl: "https://dbgadget-phlwcrc.svc.aped-4627-b74a.pinecone.io",
 };
 
 const manager = new GadgetManager(firebaseConfig, openAIConfig, pineconeConfig);

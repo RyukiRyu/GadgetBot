@@ -82,7 +82,7 @@ class FirebaseAuth {
         })
         .catch((error) => {
             if (error.code === 'auth/email-already-in-use') {
-                this.showNotification('Email sudah terdaftar.', 'error');
+                this.showNotification('Email sudah terdaftar, mohon gunakan email lain.', 'error');
                 return;
             }
         });  
@@ -96,6 +96,7 @@ class FirebaseAuth {
                 this.showNotification('Silakan verifikasi email Anda sebelum login.', 'error');
                 return;
             } else {
+                window.location.href = '/index.html';
                 this.showNotification('Login berhasil!', 'success');
                 window.location.href = '/index.html';
             }
@@ -113,6 +114,7 @@ class FirebaseAuth {
             signOut(this.auth)
             .then(() => {
                 window.location.href = '/login.html';
+                this.showNotification('Logout berhasil!', 'success');
             })
             .catch((error) => {
                 this.showNotification('Terjadi kesalahan. Silakan coba lagi.', 'error');
