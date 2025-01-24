@@ -112,7 +112,7 @@ class GadgetManager {
             Harga: ${this.getSpec(device, "Misc", "Price") || 0}`;
 
             dataEmbed.push(embeddingData);
-            await this.delay(60000); // Memberikan jeda untuk mencegah rate limiting
+            await this.delay(300000); // Memberikan jeda untuk mencegah rate limiting
         }
 
         if (dataEmbed.length > 0) {
