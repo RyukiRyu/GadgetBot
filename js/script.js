@@ -1,20 +1,6 @@
-import { firebaseAuth } from "./firebaseAuth.js";
-
 class navController {
   constructor() {
-    this.initAuth();
     this.initEventListeners();
-  }
-
-  initAuth() {
-    firebaseAuth.checkAuthState((user) => {
-      if (user) {
-        console.log('User is logged in:', user.displayName);
-      } else {
-        window.location.href = 'login.html';
-        console.log('User is not logged in');
-      }
-    });
   }
 
   loadContent(hash) {
