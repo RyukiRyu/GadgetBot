@@ -122,7 +122,7 @@ class FirebaseAuth {
         });
     }
 
-    sendPasswordResetEmail(email) {
+    resetPassword(email) {
         if (!email) {
             this.showNotification('Email harus diisi.', 'error');
             return;
@@ -189,7 +189,7 @@ class FirebaseAuth {
                 resetPasswordForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     const email = document.getElementById('resetEmail').value;
-                    this.sendPasswordResetEmail(email);
+                    this.resetPassword(email);
                 });
             }
         });

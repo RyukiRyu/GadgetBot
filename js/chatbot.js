@@ -100,14 +100,9 @@ const apiEndpoint = {
     recommendation: "http://84.247.176.166:3000/api/v1/prediction/8f05fb9a-7bfc-4322-b493-b2ea6b7b0372",
     askQuestion: "http://84.247.176.166:3000/api/v1/prediction/2d825df5-90c6-41b6-aa44-3b7f11695788"
 };
-
 firebaseAuth.checkAuthState((user) => {
-    if (user) {
         const apiService = new APIService(apiEndpoint);
         const uiHandler = new UIHandler('.chat-body', '#user-input');
         const chatbot = new Chatbot(apiService, uiHandler, user.uid);
         const sessionId = user.uid;
-    } else {
-        console.log('User is not logged in');
-    }
-});
+    });
