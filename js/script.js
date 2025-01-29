@@ -1,6 +1,19 @@
+import { firebaseAuth } from "./firebaseAuth.js";
+
 class navController {
   constructor() {
     this.initEventListeners();
+    this.initAuth();
+  }
+
+  initAuth() {
+    firebaseAuth.checkAuthState((user) => {
+      if (user) {
+        $('#logout-button').show();
+      } else {
+        window.location.href = 'login.html';
+      }
+    });
   }
 
   loadContent(hash) {
