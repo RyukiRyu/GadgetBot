@@ -192,11 +192,11 @@ const firebaseConfig = {
 };
 
 const openAIConfig = {
-    apiKey: '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',
+    apiKey: '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',
 };
 
 const pineconeConfig = {
-    apiKey: "pcsk_3N2Nde_HXKSp5DMXEdPedQQcb6gKqGxq1riUCFeF9e4grDxDygAQtP32Vww9jc5EwZfQc7",
+    apiKey: "pcsk_6Jo2A8_MZPiwNwWfYV1jjfgGcQS49AqYByWkCu61FrfyUsBDKoVnFrRtPifCCakLtj9m3r",
     indexName: "dbgadget",
     indexUrl: "https://dbgadget-phlwcrc.svc.aped-4627-b74a.pinecone.io",
 };
